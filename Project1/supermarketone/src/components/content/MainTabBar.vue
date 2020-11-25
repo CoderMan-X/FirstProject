@@ -1,51 +1,43 @@
 <template>
   <div id="main-tab-bar">
-    <div id="tabbar">
-      <div class="tabbaritem">
-        <img src="~assets/img/all.png" alt="" />
-        <div>首页</div>
-      </div>
-      <div class="tabbaritem">
-        <img src="~assets/img/classify.png" alt="" />
-        <div>分类</div>
-      </div>
-      <div class="tabbaritem">
-        <img src="~assets/img/shopping.png" alt="" />
-        <div>购物车</div>
-      </div>
-      <div class="tabbaritem">
-        <img src="~assets/img/my.png" alt="" />
-        <div>我的</div>
-      </div>
-    </div>
+    <tab-bar>
+      <tab-bar-item number="1">
+        <img slot="item-img" src="~assets/img/allClick.png" alt="" />
+        <img slot="item-img-click" src="~assets/img/all.png" alt="" />
+        <div slot="item-context">首页</div>
+      </tab-bar-item>
+      <tab-bar-item number="2">
+        <img slot="item-img" src="~assets/img/classifyClick.png" alt="" />
+        <img slot="item-img-click" src="~assets/img/classify.png" alt="" />
+        <div slot="item-context">分类</div>
+      </tab-bar-item>
+      <tab-bar-item number="3">
+        <img slot="item-img" src="~assets/img/shoppingClick.png" alt="" />
+        <img slot="item-img-click" src="~assets/img/shopping.png" alt="" />
+        <div slot="item-context">购物车</div>
+      </tab-bar-item>
+      <tab-bar-item number="4">
+        <img slot="item-img" src="~assets/img/myClick.png" alt="" />
+        <img slot="item-img-click" src="~assets/img/my.png" alt="" />
+        <div slot="item-context">我的</div>
+      </tab-bar-item>
+    </tab-bar>
   </div>
 </template>
 
 <script>
+import TabBar from "../common/tabbar/TabBar.vue";
+import TabBarItem from '../common/tabbar/TabBarItem.vue';
+
 export default {
   name: "MainTabBar",
+  components: {
+    TabBar,
+    TabBarItem,
+  },
 };
 </script>
 
 <style scoped>
-#tabbar {
-  display: flex;
-  background-color: #f6f6f6;
-  box-shadow: 0px 5px 50px rgba(100, 100, 100, 0.5);
-}
 
-.tabbaritem {
-  flex: 1;
-  text-align: center;
-  height: 58px;
-  font-size: 14px;
-}
-
-.tabbaritem img {
-  width: 26px;
-  height: 26px;
-  margin-top: 6px;
-  vertical-align: middle;
-  margin-bottom: 1px;
-}
 </style>
