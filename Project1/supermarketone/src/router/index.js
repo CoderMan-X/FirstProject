@@ -53,8 +53,8 @@ router.beforeEach((to, from, next) => {
   //不用matched的话，初始页面中的meta是空值，无法找到对应的title
   //用matched的原因是为了在开始的初始页面中找到title值
   document.title = to.matched[0].meta.title
-  console.log(to);
-  console.log("+++++++++++++++");
+  // console.log(to);
+  // console.log("+++++++++++++++");
   next() 
 })
 
