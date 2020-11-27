@@ -1,6 +1,6 @@
 <template>
-  <div class="tab-bar-item" @click="activeClick">
-    <div v-if="isActive"><slot name="item-img"></slot></div>
+  <div class="tab-bar-item" :class="{backgroundcolor:isActive}" @click="routerClick">
+    <div v-if="!isActive"><slot name="item-img"></slot></div>
     <div v-else><slot name="item-img-click"></slot></div>
     <label :class="{active:isActive}"><slot name="item-context"></slot></label>
   </div>
@@ -13,21 +13,16 @@ const commonActiveObj = {
 export default {
   name:"TabBarItem",
   props:{
-    number:String
-  },
-  data() {
-    return {
-      commonActiveObj
-    }
+    path:String
   },
   computed: {
     isActive(){
-      return this.commonActiveObj.number==this.number
+      return this.$route.path.indexOf(this.path)!== -1
     }
   },
   methods: {
-    activeClick(){
-      this.commonActiveObj.number=this.number
+    routerClick(){
+      this.$router.replace(this.path)
     }
   },
 }
@@ -37,19 +32,25 @@ export default {
 .tab-bar-item {
   flex: 1;
   text-align: center;
-  height: 58px;
+  height: 57px;
   font-size: 14px;
+  color: black;
 }
 
 .tab-bar-item img {
-  width: 26px;
-  height: 26px;
-  margin-top: 6px;
+  width: 25px;
+  height: 25px;
+  margin-top: 7px;
   vertical-align: middle;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
+  
 }
 
 .active{
-  color: #f92f2d;
+  color: #e65350;
+}
+
+.backgroundcolor{
+  background-color:rgb(248, 198, 104);
 }
 </style>
