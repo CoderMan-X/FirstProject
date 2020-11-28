@@ -35,7 +35,7 @@ export default {
   height: 57px;
   font-size: 14px;
   color: black;
-  border: 3px solid #f0ebeb;
+  /* border: 3px solid #f0ebeb; */
 }
 
 .tab-bar-item img {
@@ -53,6 +53,6 @@ export default {
 
 .backgroundcolor{
   background-color:rgb(248, 198, 104);
-  border:3px solid rgb(247, 175, 41);
+  /* border:3px solid rgb(247, 175, 41); */
 }
 </style>
